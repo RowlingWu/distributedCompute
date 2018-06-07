@@ -25,6 +25,7 @@ func newServer() *negroni.Negroni {
 			fmt.Println(webRoot)
 		}
 	}
+	fmt.Println(webRoot)
 
 	mx.PathPrefix("/static").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(webRoot+"/data/"))))
 
