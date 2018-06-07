@@ -22,10 +22,9 @@ func newServer() *negroni.Negroni {
 			panic("Could not retrive working directory")
 		} else {
 			webRoot = root
-			fmt.Println(webRoot)
 		}
 	}
-	fmt.Println(webRoot)
+	fmt.Println("path:", webRoot)
 
 	mx.PathPrefix("/static").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(webRoot+"/data/"))))
 
